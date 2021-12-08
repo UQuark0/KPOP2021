@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-content>
+    <main style="display: flex; flex-direction: column; align-items: center; background-color: lightgreen;">
+      <table mat-table [dataSource]="users" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>ID</th>
+          <td mat-cell *matCellDef="let element"><span style="padding: 10px;">{{ element.id }}</span></td>
+        </ng-container>
+
+        <ng-container matColumnDef="author">
+          <th mat-header-cell *matHeaderCellDef>Author</th>
+          <td mat-cell *matCellDef="let element"><span style="padding: 10px;">{{ element.author }}</span></td>
+        </ng-container>
+
+        <ng-container matColumnDef="en">
+          <th mat-header-cell *matHeaderCellDef>Text</th>
+          <td mat-cell *matCellDef="let element"><span style="padding: 10px;">{{ element.en }}</span></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          (click)="onRowClicked(row)"
+        ></tr>
+      </table>
+      <input style="color:black" type="button" (click)="clearStorage()" value="Clear storage" />
+      <storageEnjoyer [inpUsers]="usersStorage"></storageEnjoyer>
+      <!--<ion-router-outlet></ion-router-outlet>-->
+    </main>
+  </ion-content>
+</ion-app>

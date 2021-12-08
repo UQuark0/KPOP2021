@@ -1,0 +1,14 @@
+<table>
+  <thead>
+    <th>ID</th>
+    <th>Author</th>
+    <th>Text</th>
+  </thead>
+  <tbody style="color: black">
+    <tr *ngFor="let element of users">
+      <td><span style="padding: 10px">{{element.id}}</span></td>
+      <td><span style="padding: 10px">{{element.author}}</span></td>
+      <td><span style="padding: 10px">{{element.en}}</span></td>
+    </tr>
+  </tbody>
+</table>

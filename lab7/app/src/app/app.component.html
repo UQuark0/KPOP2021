@@ -1,0 +1,35 @@
+<h1>Хочу купить бумагу</h1>
+<h6></h6>
+<br />
+<div style="border: 2px solid black; margin: 10px; padding: 10px">
+  Naming:<input type="text" [(ngModel)]="userData.name" />
+  <div *ngIf="!(nameErr === '')" id="nameErr">{{ nameErr }}</div>
+  <hr />
+  Production naming:<input type="text" [(ngModel)]="userData.nameProd" />
+  <div *ngIf="!(nameProdErr === '')" id="nameProdErr">{{ nameProdErr }}</div>
+  <hr />
+  Format:<input type="text" [(ngModel)]="userData.format" />
+  <div *ngIf="!(formatErr === '')" id="formatErr">{{ formatErr }}</div>
+  <hr />
+  Ink:<input type="text" [(ngModel)]="userData.ink" />
+  <div *ngIf="!(inkErr === '')" id="inkErr">{{ inkErr }}</div>
+</div>
+<div style="border: 2px solid black; margin: 10px; padding: 10px">
+  Paper quantity:<input type="text" [(ngModel)]="userData.paperQ" />
+
+  <div *ngIf="!(paperQErr === '')" id="paperQErr">{{ paperQErr }}</div>
+  <hr />
+
+  Copies:<input type="text" [(ngModel)]="userData.ekzQ" />
+  <div *ngIf="!(ekzQErr === '')" id="ekzQErr">{{ ekzQErr }}</div>
+  <hr />
+
+  Sides:<input type="text" [(ngModel)]="userData.sidesQ" />
+  <div *ngIf="!(sidesQErr === '')" id="sidesQErr">{{ sidesQErr }}</div>
+  <hr />
+  Master paper:<input type="text" [(ngModel)]="userData.masterQ" />
+  <div *ngIf="!(masterQErr === '')" id="masterQErr">{{ masterQErr }}</div>
+  <hr />
+</div>
+
+<input type="button" value="Отправить" (click)="checkData()" />
